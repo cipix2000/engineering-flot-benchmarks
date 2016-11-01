@@ -1,0 +1,27 @@
+{
+  "name": "engineering-flot-benchmarks",
+  "version": "0.2.0",
+  "description": "A couple of pages to benchmark the graphing and charting performance of flot",
+  "main": "index.html",
+  "directories": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://cipix2000@github.com/cipix2000/engineering-flot-benchmarks.git"
+  },
+  "keywords": [
+    "Flot",
+    "benchmarking"
+  ],
+  "author": "Ciprian Ceteras",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cipix2000/engineering-flot-benchmarks/issues"
+  },
+  "homepage": "https://github.com/cipix2000/engineering-flot-benchmarks",
+  "dependencies": {
+    "Flot": "cipix2000/engineering-flot",
+    "flot-charting": "cipix2000/flot-charting",
+    "jquery": "^3.1.1"
+  }
+}
