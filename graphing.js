@@ -33,7 +33,7 @@ $(function () {
             }
         }
 
-        globalIndex += samples;
+        globalIndex += samples/60;
 
         plot.setData(buffer);
         plot.setupGrid();
@@ -54,5 +54,11 @@ $(function () {
     });
 
     initBuffer();
-    setInterval(updateData, 1);
+
+    function updateDataAndRAF() {
+        updateData();
+        window.requestAnimationFrame(updateDataAndRAF);
+    };
+
+    window.requestAnimationFrame(updateDataAndRAF);
 });
