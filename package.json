@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/cipix2000/engineering-flot-benchmarks",
   "dependencies": {
-    "Flot": "cipix2000/engineering-flot",
+    "engineering-flot": "cipix2000/engineering-flot",
     "flot-charting": "cipix2000/flot-charting",
     "jquery": "^3.1.1"
   }

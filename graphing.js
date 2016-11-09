@@ -5,11 +5,11 @@ $(function () {
     'use strict';
     var plot;
     var globalIndex = 0;
-    var chartStep = 0.001;
 
     var plots = 2;
-    var samples = 16000;
+    var samples = 10000;
     var buffer = [];
+    var chartStep = 9/samples;
 
     var initBuffer = function () {
         for (var j = 0 ; j < plots; j++) {
@@ -17,8 +17,8 @@ $(function () {
         }
     }
 
-
-    function updateData() {
+    // update data reuses the same buffer, so no memory is allocated here, except the first time when it runs
+    function updateDataAndDraw() {
         var sin, cos, sin1, tan;
         var tarray;
 
@@ -56,7 +56,7 @@ $(function () {
     initBuffer();
 
     function updateDataAndRAF() {
-        updateData();
+        updateDataAndDraw();
         window.requestAnimationFrame(updateDataAndRAF);
     };
 
