@@ -7,7 +7,7 @@ $(function () {
     var globalIndex = 0;
 
     var plots = 2;
-    var samples = 10000;
+    var samples = 20000;
     var buffer = [];
     var chartStep = 9/samples;
 
