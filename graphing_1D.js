@@ -114,12 +114,15 @@ $(function () {
         yaxes: [{show: true}],
         legend: {
             show: false
+        },
+        interaction: {
+            redrawOverlayInterval: -1
         }
     });
 
     function updateDataAndRAF() {
-        updateDataAndDraw();
         window.requestAnimationFrame(updateDataAndRAF);
+        updateDataAndDraw();
     };
 
     window.requestAnimationFrame(updateDataAndRAF);
