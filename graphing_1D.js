@@ -22,11 +22,17 @@ $(function () {
             j,
             index = 0,
             iindex= 0,
-            length = endIndex - startIndex,
+            length = 0,
+            step = buckets / (endIndex - startIndex),
             res;
 
+        startIndex = Math.min(Math.max(0, Math.floor(startIndex)), (data.length/2) -1);
+        endIndex = Math.max(0, Math.min((data.length/2) - 1, Math.floor(endIndex + 1)));
+
+        length = endIndex - startIndex;
+
         if (buckets > length) {
-            return data;
+            step = 1;
         }
 
         res = [];
@@ -53,10 +59,11 @@ $(function () {
                 res[iindex+3] = data[i+1];
             }
 
-            index += buckets/length;
+            index += step;
             iindex = Math.floor(index) * 4;
         }
 
+        res.length = iindex + 1;
         return res;
     }
 
@@ -117,6 +124,12 @@ $(function () {
         },
         interaction: {
             redrawOverlayInterval: -1
+        },
+        zoom: {
+            interactive: true
+        },
+        pan: {
+            interactive: true
         }
     });
 
